@@ -19,9 +19,9 @@
 
     {{-- Card Utama --}}
     <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
-        
+
         {{-- Header Card dengan Gradien Ungu Lembut --}}
-        <div class="card-header py-3 border-0" 
+        <div class="card-header py-3 border-0"
              style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
             <div class="d-flex align-items-center">
                 <div class="icon-circle bg-white text-purple d-inline-flex align-items-center justify-content-center rounded-circle mr-3 shadow-sm" style="width: 45px; height: 45px;">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
@@ -52,14 +52,14 @@
                                 <td class="pl-4 align-middle">
                                     <span class="badge border px-2 py-1 font-weight-bold"
                                           style="background-color: #f3e5f5; color: #8e24aa; border-color: #e1bee7 !important;">
-                                        P{{ str_pad($disease->id, 2, '0', STR_PAD_LEFT) }}
+                                        R{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
                                     </span>
                                 </td>
 
                                 {{-- Info Penyakit --}}
                                 <td class="align-middle">
                                     <h6 class="text-dark font-weight-bold mb-1">{{ $disease->name }}</h6>
-                                    <span class="badge text-white px-2 py-1 shadow-sm" 
+                                    <span class="badge text-white px-2 py-1 shadow-sm"
                                           style="font-weight: 500; font-size: 0.75rem; background: linear-gradient(45deg, #43e97b, #38f9d7);">
                                         <i class="fas fa-motorcycle mr-1"></i> {{ $disease->motorType->name ?? 'Semua Tipe' }}
                                     </span>
@@ -77,7 +77,7 @@
                                             @foreach ($disease->symptoms as $symptom)
                                                 <li class="text-secondary mb-1">
                                                     <i class="fas fa-check-circle mr-2 small" style="color: #9b59b6;"></i>
-                                                    <span class="text-dark font-weight-500">G{{ str_pad($symptom->id, 2, '0', STR_PAD_LEFT) }}</span> - {{ Str::limit($symptom->name, 60) }}
+                                                    <span class="text-dark font-weight-500">G{{ str_pad($loop->iteration, 1, '0', STR_PAD_LEFT) }}</span> - {{ Str::limit($symptom->name, 60) }}
                                                 </li>
                                             @endforeach
                                         </ul>

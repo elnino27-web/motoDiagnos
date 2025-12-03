@@ -75,7 +75,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card shadow-sm border-0 rounded-lg">
-                
+
                 {{-- Header Card Dinamis --}}
                 <div class="card-header bg-{{ $themeClass }} text-white py-3 rounded-top">
                     <div class="d-flex align-items-center">
@@ -88,18 +88,18 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <form action="{{ route('admin.rules.store') }}" method="POST">
                     @csrf
-                    
+
                     <div class="card-body p-4">
-                        
+
                         {{-- BAGIAN 1: KESIMPULAN (THEN) --}}
                         <div class="mb-5">
                             <h6 class="section-header text-{{ $themeClass }}">
                                 <i class="fas fa-bullseye mr-2"></i> 1. Pilih Kesimpulan (Penyakit)
                             </h6>
-                            
+
                             {{-- Alert Info Dinamis --}}
                             <div class="alert alert-light border-{{ $themeClass }} text-{{ $themeClass }} d-flex align-items-center rounded-lg mb-4" role="alert">
                                 <i class="fas fa-{{ isset($disease) ? 'exclamation-triangle' : 'info-circle' }} mr-2 fa-lg"></i>
@@ -120,19 +120,19 @@
                                             <i class="fas fa-bug"></i>
                                         </span>
                                     </div>
-                                    <select 
-                                        class="form-control border-left-0 rounded-right @error('disease_id') is-invalid @enderror" 
-                                        id="disease_id" 
-                                        name="disease_id" 
+                                    <select
+                                        class="form-control border-left-0 rounded-right @error('disease_id') is-invalid @enderror"
+                                        id="disease_id"
+                                        name="disease_id"
                                         required
                                         {{ isset($disease) ? 'disabled' : '' }}
                                         style="font-size: 1rem;"
                                     >
                                         <option value="">-- Pilih Penyakit --</option>
                                         @foreach ($diseases as $d)
-                                            <option value="{{ $d->id }}" 
+                                            <option value="{{ $d->id }}"
                                                 {{ old('disease_id', $disease->id ?? '') == $d->id ? 'selected' : '' }}>
-                                                [{{ $d->motorType->name ?? '?' }}] {{ $d->name }} 
+                                                [{{ $d->motorType->name ?? '?' }}] {{ $d->name }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -151,7 +151,7 @@
                             <h6 class="section-header text-{{ $themeClass }}">
                                 <i class="fas fa-list-ul mr-2"></i> 2. Pilih Gejala (Premis)
                             </h6>
-                            
+
                             {{-- Alert Info Gejala --}}
                             <div class="alert alert-light border-{{ $themeClass }} text-{{ $themeClass }} d-flex align-items-center rounded-lg mb-4" role="alert">
                                 <i class="fas fa-check-double mr-2 fa-lg"></i>
@@ -169,17 +169,17 @@
                                 @forelse ($symptoms as $symptom)
                                     <div class="col-md-6 mb-3">
                                         <div class="position-relative h-100">
-                                            <input 
-                                                type="checkbox" 
-                                                class="symptom-card-input" 
-                                                name="symptoms[]" 
-                                                value="{{ $symptom->id }}" 
+                                            <input
+                                                type="checkbox"
+                                                class="symptom-card-input"
+                                                name="symptoms[]"
+                                                value="{{ $symptom->id }}"
                                                 id="symptom-{{ $symptom->id }}"
                                                 {{ in_array($symptom->id, $selectedSymptoms) ? 'checked' : '' }}
                                             >
                                             <label class="symptom-card-label" for="symptom-{{ $symptom->id }}">
                                                 <div class="d-flex align-items-start">
-                                                    <span class="badge badge-light border mr-2 mt-1">G{{ str_pad($symptom->id, 2, '0', STR_PAD_LEFT) }}</span>
+                                                    <span class="badge badge-light border mr-2 mt-1">G{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                                     <div>
                                                         <span class="d-block font-weight-bold text-dark mb-1" style="font-size: 0.95rem;">{{ $symptom->name }}</span>
                                                         <span class="badge badge-secondary badge-pill" style="font-size: 0.7rem; opacity: 0.8;">
@@ -193,7 +193,7 @@
                                 @empty
                                     <div class="col-12 text-center py-5">
                                         <div class="alert alert-{{ $themeClass }} d-inline-block border-0 shadow-sm">
-                                            <i class="fas fa-exclamation-triangle mr-2"></i> 
+                                            <i class="fas fa-exclamation-triangle mr-2"></i>
                                             Belum ada data Gejala. Silakan input Gejala terlebih dahulu.
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@
                         <a href="{{ route('admin.rules.index') }}" class="btn btn-link text-secondary font-weight-bold p-0 text-decoration-none">
                             <i class="fas fa-arrow-left mr-1"></i> Kembali
                         </a>
-                        
+
                         <button type="submit" class="btn btn-{{ $themeClass }} text-white rounded-pill px-5 shadow-sm font-weight-bold">
                             <i class="fas fa-save mr-2"></i> {{ isset($disease) ? 'Perbarui Aturan' : 'Simpan Aturan' }}
                         </button>
