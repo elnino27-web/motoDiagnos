@@ -19,9 +19,9 @@
 
     {{-- Card Utama --}}
     <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
-        
+
         {{-- Header Card dengan Gradien Danger (Merah-Pink) --}}
-        <div class="card-header py-3 border-0" 
+        <div class="card-header py-3 border-0"
              style="background: linear-gradient(45deg, #ff0844, #ffb199);">
             <div class="d-flex align-items-center">
                 <div class="icon-circle bg-white text-danger d-inline-flex align-items-center justify-content-center rounded-circle mr-3 shadow-sm" style="width: 45px; height: 45px;">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
@@ -50,7 +50,7 @@
                             <tr class="border-bottom-light">
                                 {{-- Kode Penyakit FIX: Menggunakan $loop->iteration --}}
                                 <td class="pl-4 py-3">
-                                    <span class="badge border px-2 py-1 font-weight-bold" 
+                                    <span class="badge border px-2 py-1 font-weight-bold"
                                           style="background-color: #ffebee; color: #c62828; border-color: #ffcdd2 !important;">
                                         P{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
                                     </span>
@@ -59,9 +59,9 @@
                                 {{-- Tipe Motor --}}
                                 <td class="py-3">
                                     <div class="d-flex flex-column">
-                                        <span class="badge px-2 py-1 mb-1 align-self-start text-white shadow-sm" 
+                                        <span class="badge px-2 py-1 mb-1 align-self-start text-white shadow-sm"
                                               style="background: linear-gradient(45deg, #43e97b, #38f9d7);"> {{-- Gradien Tipe Motor (Hijau/Tosca) --}}
-                                            <i class="fas fa-motorcycle mr-1 small"></i> {{ $disease->motorType->name ?? 'Unknown' }}
+                                            <i class="fas fa-motorcycle"></i> {{ $disease->motorType->name ?? 'Unknown' }}
                                         </span>
                                         <small class="text-muted pl-1">{{ $disease->motorType->brand->name ?? '-' }}</small>
                                     </div>
