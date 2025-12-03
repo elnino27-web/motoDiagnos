@@ -126,7 +126,7 @@
     <div class="col-12">
         <div class="welcome-banner">
             <div>
-                <h2>Halo, {{ Auth::user()->name ?? 'Administrator' }}! 👋
+                <h2>Halo, <span class="text-merk">{{ Auth::user()->name ?? 'Administrator' }}</span>! 👋
                 </h2>
                 <p>Selamat datang di panel kontrol <strong>MotoDiagnos</strong>. Berikut adalah ringkasan data sistem pakar Anda hari ini.</p>
             </div>
@@ -204,29 +204,29 @@
         <div class="card h-100">
             <div class="card-header bg-white border-0">
                 <h3 class="card-title font-weight-bold text-dark">
-                    <i class="fas fa-rocket mr-2 text-primary"></i> Aksi Cepat
+                    <i class="fas fa-rocket mr-2 text-merk"></i> Aksi Cepat
                 </h3>
             </div>
             <div class="card-body d-flex flex-wrap justify-content-center">
                 {{-- Master Data --}}
                 <a href="{{ route('admin.brands.create') }}" class="btn btn-app bg-light border m-2" title="Tambah Merek Baru">
-                    <i class="fas fa-tag text-primary"></i> Tambah Merek
+                    <i class="fas fa-tag text-merk"></i> Tambah Merek
                 </a>
                 <a href="{{ route('admin.motor-types.create') }}" class="btn btn-app bg-light border m-2" title="Tambah Tipe Motor">
-                    <i class="fas fa-motorcycle text-success"></i> Tambah Tipe
+                    <i class="fas fa-motorcycle text-type"></i> Tambah Tipe
                 </a>
                 
                 {{-- Expert System Data --}}
                 <a href="{{ route('admin.symptoms.create') }}" class="btn btn-app bg-light border m-2" title="Input Kerusakan Baru">
-                    <i class="fas fa-clipboard-list text-warning"></i> Input Gejala
+                    <i class="fas fa-clipboard-list text-symptoms"></i> Input Gejala
                 </a>
                 <a href="{{ route('admin.symptoms.create') }}" class="btn btn-app bg-light border m-2" title="Input Penyakit Baru">
-                    <i class="fas fa-tools text-danger"></i> Input Kerusakan
+                    <i class="fas fa-tools text-diseases"></i> Input Kerusakan
                 </a>
                 
                 {{-- Rules & Settings --}}
                 <a href="{{ route('admin.rules.create') }}" class="btn btn-app bg-light border m-2" title="Buat Aturan Diagnosa">
-                    <i class="fas fa-project-diagram" style="color: #de88dbff"></i> Buat Aturan
+                    <i class="fas fa-project-diagram text-rules"></i> Buat Aturan
                 </a>
                 <a href="{{ route('admin.profile.edit') }}" class="btn btn-app bg-light border m-2" title="Edit Profil Saya">
                     <i class="fas fa-user-edit text-info"></i> Edit Profil
@@ -248,16 +248,16 @@
                         <tr>
                             <td>Total Aturan Diagnosa</td>
                             <td class="text-right">
-                                <span class="badge bg-primary">{{ \App\Models\Disease::has('symptoms')->count() }} Penyakit Terhubung</span>
+                                <span class="badge bg-gradient-primary-custom">{{ \App\Models\Disease::has('symptoms')->count() }} Penyakit Terhubung</span>
                             </td>
                         </tr>
                         <tr>
                             <td>Status Aplikasi</td>
-                            <td class="text-right"><span class="badge bg-success">Aktif & Stabil</span></td>
+                            <td class="text-right"><span class="badge bg-gradient-info-custom">Aktif & Stabil</span></td>
                         </tr>
                         <tr>
                             <td>Versi</td>
-                            <td class="text-right text-muted">v1.0</td>
+                            <td class="text-right text-muted text-rules">v1.0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -286,7 +286,7 @@
                     // Tambahkan angka, gunakan Math.ceil untuk membulatkan ke atas
                     counter.innerText = Math.ceil(data + time);
                     // Panggil fungsi lagi setelah 10ms (efek animasi)
-                    setTimeout(animate, 20);
+                    setTimeout(animate, 50);
                 } else {
                     counter.innerText = value; // Pastikan angka akhir tepat
                 }

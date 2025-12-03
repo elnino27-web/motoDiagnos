@@ -11,7 +11,7 @@
             <p class="text-muted small mb-0">Kelola daftar produsen motor yang terdaftar dalam sistem.</p>
         </div>
         {{-- Tombol menggunakan gradien yang sama agar serasi --}}
-        <a href="{{ route('admin.brands.create') }}" class="btn text-white rounded-pill shadow-sm px-4 font-weight-bold" 
+        <a href="{{ route('admin.brands.create') }}" class="btn text-dark rounded-pill shadow-sm px-4 font-weight-bold" 
            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none;">
             <i class="fas fa-plus mr-2"></i> Tambah Merek
         </a>
@@ -28,8 +28,8 @@
                     <i class="fas fa-tag fa-lg" style="color: #4facfe;"></i>
                 </div>
                 <div>
-                    <h5 class="mb-0 font-weight-bold">Daftar Merek Terdaftar</h5>
-                    <p class="mb-0 small opacity-90">Total {{ $brands->count() }} merek tersedia</p>
+                    <h5 class="mb-0 font-weight-bold text-dark" style="opacity: 0.8;">Daftar Merek Terdaftar</h5>
+                    <p class="mb-0 small text-dark" style="opacity: 0.6;">Total {{ $brands->count() }} merek tersedia</p>
                 </div>
             </div>
         </div>

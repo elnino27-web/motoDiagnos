@@ -11,7 +11,7 @@
             <p class="text-muted small mb-0">Kelola logika sistem pakar yang menghubungkan penyakit dan gejala.</p>
         </div>
         {{-- Tombol menggunakan gradien Ungu --}}
-        <a href="{{ route('admin.rules.create') }}" class="btn text-white rounded-pill shadow-sm px-4 font-weight-bold"
+        <a href="{{ route('admin.rules.create') }}" class="btn text-dark rounded-pill shadow-sm px-4 font-weight-bold"
            style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); border: none; color: #fff;">
             <i class="fas fa-plus mr-2"></i> Tambah Aturan Baru
         </a>
@@ -28,8 +28,8 @@
                     <i class="fas fa-project-diagram fa-lg" style="color: #9b59b6;"></i>
                 </div>
                 <div>
-                    <h5 class="mb-0 font-weight-bold text-white">Daftar Aturan Penyakit</h5>
-                    <p class="mb-0 small opacity-90">Logika diagnosa aktif dalam sistem</p>
+                    <h5 class="mb-0 font-weight-bold text-dark" style="opacity: 0.8;">Daftar Aturan Penyakit</h5>
+                    <p class="mb-0 small text-dark" style="opacity: 0.6;">Logika diagnosa aktif dalam sistem</p>
                 </div>
             </div>
         </div>

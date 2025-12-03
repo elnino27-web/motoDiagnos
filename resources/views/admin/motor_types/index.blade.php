@@ -10,7 +10,7 @@
             <h3 class="font-weight-bold text-dark mb-1">Data Master Tipe</h3>
             <p class="text-muted small mb-0">Kelola varian dan model motor berdasarkan merek.</p>
         </div>
-        <a href="{{ route('admin.motor-types.create') }}" class="btn text-white rounded-pill shadow-sm px-4 font-weight-bold"
+        <a href="{{ route('admin.motor-types.create') }}" class="btn text-dark rounded-pill shadow-sm px-4 font-weight-bold"
            style="background: linear-gradient(45deg, #43e97b, #38f9d7); border: none;">
             <i class="fas fa-plus mr-2"></i> Tambah Tipe
         </a>
@@ -27,8 +27,8 @@
                     <i class="fas fa-motorcycle fa-lg" style="color: #43e97b;"></i>
                 </div>
                 <div>
-                    <h5 class="mb-0 font-weight-bold text-white">Daftar Tipe Motor</h5>
-                    <p class="mb-0 small opacity-90">Total {{ $motorTypes->count() }} tipe terdaftar</p>
+                    <h5 class="mb-0 font-weight-bold text-dark" style="opacity: 0.8;">Daftar Tipe Motor</h5>
+                    <p class="mb-0 small text-dark" style="opacity: 0.6;">Total {{ $motorTypes->count() }} tipe terdaftar</p>
                 </div>
             </div>
         </div>

@@ -25,10 +25,9 @@
              style="background: linear-gradient(45deg, #f6d365, #fda085);">
             <div class="d-flex align-items-center">
                 <div class="icon-circle bg-white text-warning d-inline-flex align-items-center justify-content-center rounded-circle mr-3 shadow-sm" style="width: 45px; height: 45px;">
-                    <i class="fas fa-clipboard-list fa-lg" style="color: #fda085;"></i>
+                    <i class="fas fa-search-plus fa-lg" style="color: #fda085;"></i>
                 </div>
                 <div>
-                    {{-- Menggunakan text-dark atau warna gelap agar kontras dengan kuning --}}
                     <h5 class="mb-0 font-weight-bold text-dark" style="opacity: 0.8;">Daftar Gejala Terdaftar</h5>
                     <p class="mb-0 small text-dark" style="opacity: 0.6;">Total {{ $symptoms->count() }} gejala tersedia</p>
                 </div>
@@ -49,11 +48,11 @@
                     <tbody>
                         @forelse ($symptoms as $symptom)
                             <tr class="border-bottom-light">
-                                {{-- Kode Gejala --}}
+                                {{-- Kode Gejala FIX: Menggunakan $loop->iteration untuk urutan G01, G02, dst. --}}
                                 <td class="pl-4 py-3">
                                     <span class="badge border px-2 py-1 font-weight-bold" 
-                                          style="background-color: #fff8e1; color: #bcaaa4; border-color: #ffe0b2 !important;">
-                                        G{{ str_pad($symptom->id, 2, '0', STR_PAD_LEFT) }}
+                                          style="background-color: #fff8e1; color: #5a4604; border-color: #ffe0b2 !important;">
+                                        G{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
                                     </span>
                                 </td>
 
@@ -61,8 +60,8 @@
                                 <td class="py-3">
                                     <div class="d-flex flex-column">
                                         <span class="badge px-2 py-1 mb-1 align-self-start text-white shadow-sm" 
-                                              style="background: linear-gradient(45deg, #f6d365, #fda085);"> {{-- Gradien Tipe Motor --}}
-                                            <i class="fas fa-biking"></i> {{ $symptom->motorType->name ?? 'Unknown' }}
+                                              style="background: linear-gradient(45deg, #43e97b, #38f9d7);"> {{-- Gradien Tipe Motor (Hijau/Tosca) --}}
+                                            <i class="fas fa-motorcycle mr-1 small"></i> {{ $symptom->motorType->name ?? 'Unknown' }}
                                         </span>
                                         <small class="text-muted pl-1">{{ $symptom->motorType->brand->name ?? '-' }}</small>
                                     </div>
@@ -97,7 +96,7 @@
                                         <h5>Data Kosong</h5>
                                         <p class="small mb-0">Belum ada data gejala yang ditambahkan.</p>
                                     </div>
-                                    <a href="{{ route('admin.symptoms.create') }}" class="btn btn-sm mt-3 rounded-pill px-4 font-weight-bold"
+                                    <a href="{{ route('admin.symptoms.create') }}" class="btn btn-sm mt-3 rounded-pill px-4 font-weight-bold text-white"
                                        style="background: linear-gradient(45deg, #f6d365, #fda085); border: none; color: #5a4604;">
                                         <i class="fas fa-plus mr-1"></i> Tambah Sekarang
                                     </a>

@@ -31,7 +31,7 @@
         }
 
         .nav-sidebar .nav-item .nav-link.active {
-            background-color: #3b82f6 !important; 
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: #ffffff !important;
             box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
             border-radius: 8px;
@@ -86,6 +86,53 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             transition: transform 0.2s;
         }
+
+        .profil-img {
+            width: 30px; height: 30px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.8rem; font-weight: bold;
+            overflow: hidden;
+        }
+
+        .text-merk {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .text-type {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .text-symptoms {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .text-diseases {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .text-rules {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         
         /* Footer */
         .main-footer {
@@ -113,7 +160,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">
                         <div class="image mr-2">
-                            <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name ?? 'Admin' }}&background=3b82f6&color=fff" class="img-circle elevation-1" alt="User Image" width="30">
+                            <div class="img-circle elevation-2 profil-img">
+                                {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
+                            </div>
                         </div>
                         <span class="d-none d-md-inline">{{ Auth::user()->name ?? 'Administrator' }}</span>
                     </a>
@@ -124,7 +173,7 @@
                         </div>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.profile.edit') }}" class="dropdown-item py-2">
-                            <i class="fas fa-user mr-2 text-primary"></i> Profil Saya
+                            <i class="fas fa-user mr-2 text-info"></i> Profil Saya
                         </a>
                         <a href="{{ route('admin.password.edit') }}" class="dropdown-item py-2">
                             <i class="fas fa-key mr-2 text-warning"></i> Ubah Password
@@ -144,7 +193,7 @@
         {{-- Sidebar --}}
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="{{ route('admin.dashboard') }}" class="brand-link">
-                <div class="brand-image img-circle elevation-3 d-flex justify-content-center align-items-center bg-white text-primary" style="width: 33px; height: 33px; font-size: 1.2rem;">
+                <div class="brand-image img-circle elevation-3 d-flex justify-content-center align-items-center text-white" style="width: 33px; height: 33px; font-size: 1.2rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                     <i class="fas fa-motorcycle"></i>
                 </div>
                 <span class="brand-text font-weight-bold ml-2">MotoDiagnos</span>
@@ -156,7 +205,7 @@
                         
                         <li class="nav-item">
                             <a href="{{ route('admin.dashboard') }}" class="nav-link @if(request()->routeIs('admin.dashboard')) active @endif">
-                                <i class="nav-icon fas fa-th-large"></i>
+                                <i class="nav-icon fas fa-chart-column"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
@@ -220,13 +269,13 @@
                             <ul class="nav nav-treeview" style="display: {{ $isSettingsOpen ? 'block' : 'none' }};">
                                 <li class="nav-item">
                                     <a href="{{ route('admin.profile.edit') }}" class="nav-link @if(request()->routeIs('admin.profile.edit')) active @endif">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                        <i class="fa-solid fa-user nav-icon text-info"></i>
                                         <p>Profil Saya</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('admin.password.edit') }}" class="nav-link @if(request()->routeIs('admin.password.edit')) active @endif">
-                                        <i class="far fa-circle nav-icon text-warning"></i>
+                                        <i class="fa-solid fa-key nav-icon text-warning"></i>
                                         <p>Ganti Password</p>
                                     </a>
                                 </li>
@@ -278,7 +327,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Versi</b> 1.0
             </div>
-            <strong>Copyright &copy; 2025 <a href="#" class="text-primary">MotoDiagnos</a>.</strong> Hak cipta dilindungi.
+            <strong><a href="#" class="text-merk">MotoDiagnos</a> &copy; 2025</strong>. Alat Bantu Cek Kerusakan Motor
         </footer>
     </div>
 
