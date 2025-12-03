@@ -6,10 +6,10 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-9 col-md-10"> {{-- Sedikit lebih lebar karena ada textarea --}}
-        
+
         {{-- Card Utama --}}
         <div class="card shadow-sm border-0 rounded-lg">
-            
+
             {{-- Header Card --}}
             <div class="card-header bg-danger text-white py-3 rounded-top">
                 <div class="d-flex align-items-center">
@@ -22,12 +22,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <form action="{{ route('admin.diseases.store') }}" method="POST">
                 @csrf
 
                 <div class="card-body p-4">
-                    
+
                     {{-- Alert Info --}}
                     <div class="alert alert-light border-danger text-danger d-flex align-items-center rounded-lg mb-4" role="alert">
                         <i class="fas fa-info-circle mr-2 fa-lg"></i>
@@ -45,10 +45,10 @@
                                     <i class="fas fa-motorcycle"></i>
                                 </span>
                             </div>
-                            <select 
-                                class="form-control border-left-0 rounded-right @error('motor_type_id') is-invalid @enderror" 
-                                id="motor_type_id" 
-                                name="motor_type_id" 
+                            <select
+                                class="form-control border-left-0 rounded-right @error('motor_type_id') is-invalid @enderror"
+                                id="motor_type_id"
+                                name="motor_type_id"
                                 required
                                 style="font-size: 1rem;"
                             >
@@ -71,7 +71,7 @@
                         <div class="input-group input-group-lg">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white border-right-0 rounded-left text-danger">
-                                    <i class="fas fa-bug"></i>
+                                    <i class="fas fa-tools"></i>
                                 </span>
                             </div>
                             <input type="text" class="form-control border-left-0 rounded-right @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required style="font-size: 1rem;">
@@ -103,7 +103,7 @@
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white border-right-0 rounded-left text-success align-items-start pt-2">
-                                    <i class="fas fa-tools"></i>
+                                    <i class="fas fa-wrench"></i>
                                 </span>
                             </div>
                             <textarea class="form-control border-left-0 rounded-right @error('solution') is-invalid @enderror" id="solution" name="solution" rows="3" required placeholder="Langkah-langkah perbaikan...">{{ old('solution') }}</textarea>
@@ -120,7 +120,7 @@
                     <a href="{{ route('admin.diseases.index') }}" class="btn btn-link text-secondary font-weight-bold p-0 text-decoration-none">
                         <i class="fas fa-arrow-left mr-1"></i> Kembali
                     </a>
-                    
+
                     <button type="submit" class="btn btn-danger rounded-pill px-5 shadow-sm font-weight-bold text-white">
                         <i class="fas fa-save mr-2"></i> Simpan Data
                     </button>

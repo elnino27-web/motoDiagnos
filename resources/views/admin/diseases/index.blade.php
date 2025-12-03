@@ -25,7 +25,7 @@
              style="background: linear-gradient(45deg, #ff0844, #ffb199);">
             <div class="d-flex align-items-center">
                 <div class="icon-circle bg-white text-danger d-inline-flex align-items-center justify-content-center rounded-circle mr-3 shadow-sm" style="width: 45px; height: 45px;">
-                    <i class="fas fa-bug fa-lg" style="color: #ff0844;"></i>
+                    <i class="fas fa-tools fa-lg" style="color: #ff0844;"></i>
                 </div>
                 <div>
                     <h5 class="mb-0 font-weight-bold text-white">Daftar Kerusakan Terdaftar</h5>

@@ -6,10 +6,10 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
-        
+
         {{-- Card Utama --}}
         <div class="card shadow-sm border-0 rounded-lg">
-            
+
             {{-- Header Card --}}
             <div class="card-header bg-warning text-white py-3 rounded-top">
                 <div class="d-flex align-items-center">
@@ -17,18 +17,18 @@
                         <i class="fas fa-edit fa-lg"></i>
                     </div>
                     <div>
-                        <h5 class="mb-0 font-weight-bold">Edit Gejala: G{{ str_pad($symptom->id, 2, '0', STR_PAD_LEFT) }}</h5>
+                        <h5 class="mb-0 font-weight-bold">Edit Gejala</h5>
                         <p class="mb-0 small opacity-90">Perbarui informasi gejala kerusakan.</p>
                     </div>
                 </div>
             </div>
-            
+
             <form action="{{ route('admin.symptoms.update', $symptom->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
                 <div class="card-body p-4">
-                    
+
                     {{-- Alert Info --}}
                     <div class="alert alert-light border-warning text-warning d-flex align-items-center rounded-lg mb-4" role="alert">
                         <i class="fas fa-exclamation-triangle mr-2 fa-lg"></i>
@@ -46,16 +46,16 @@
                                     <i class="fas fa-motorcycle"></i>
                                 </span>
                             </div>
-                            <select 
-                                class="form-control border-left-0 rounded-right @error('motor_type_id') is-invalid @enderror" 
-                                id="motor_type_id" 
-                                name="motor_type_id" 
+                            <select
+                                class="form-control border-left-0 rounded-right @error('motor_type_id') is-invalid @enderror"
+                                id="motor_type_id"
+                                name="motor_type_id"
                                 required
                                 style="font-size: 1rem;"
                             >
                                 <option value="">-- Pilih Tipe Motor --</option>
                                 @foreach ($motorTypes as $motorType)
-                                    <option value="{{ $motorType->id }}" 
+                                    <option value="{{ $motorType->id }}"
                                         {{ old('motor_type_id', $symptom->motor_type_id) == $motorType->id ? 'selected' : '' }}>
                                         {{ $motorType->brand->name }} - {{ $motorType->name }}
                                     </option>
@@ -76,11 +76,11 @@
                                     <i class="fas fa-clipboard-list"></i>
                                 </span>
                             </div>
-                            <input 
-                                type="text" 
-                                class="form-control border-left-0 rounded-right @error('name') is-invalid @enderror" 
-                                id="name" 
-                                name="name" 
+                            <input
+                                type="text"
+                                class="form-control border-left-0 rounded-right @error('name') is-invalid @enderror"
+                                id="name"
+                                name="name"
                                 value="{{ old('name', $symptom->name) }}"
                                 placeholder="Contoh: Starter elektrik tidak berfungsi"
                                 required
@@ -99,7 +99,7 @@
                     <a href="{{ route('admin.symptoms.index') }}" class="btn btn-link text-secondary font-weight-bold p-0 text-decoration-none">
                         <i class="fas fa-arrow-left mr-1"></i> Kembali
                     </a>
-                    
+
                     <button type="submit" class="btn btn-warning rounded-pill px-5 shadow-sm font-weight-bold text-white">
                         <i class="fas fa-sync-alt mr-2"></i> Perbarui Gejala
                     </button>

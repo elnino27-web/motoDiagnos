@@ -25,7 +25,7 @@
              style="background: linear-gradient(45deg, #f6d365, #fda085);">
             <div class="d-flex align-items-center">
                 <div class="icon-circle bg-white text-warning d-inline-flex align-items-center justify-content-center rounded-circle mr-3 shadow-sm" style="width: 45px; height: 45px;">
-                    <i class="fas fa-search-plus fa-lg" style="color: #fda085;"></i>
+                    <i class="fas fa-clipboard-list fa-lg" style="color: #fda085;"></i>
                 </div>
                 <div>
                     <h5 class="mb-0 font-weight-bold text-dark" style="opacity: 0.8;">Daftar Gejala Terdaftar</h5>
