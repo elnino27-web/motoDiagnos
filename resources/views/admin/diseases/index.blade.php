@@ -11,7 +11,7 @@
             <p class="text-muted small mb-0">Kelola jenis kerusakan dan solusi perbaikannya.</p>
         </div>
         {{-- Tombol menggunakan gradien Merah-Pink --}}
-        <a href="{{ route('admin.diseases.create') }}" class="btn text-white rounded-pill shadow-sm px-4 font-weight-bold"
+        <a href="{{ route('admin.diseases.create') }}" class="btn text-dark rounded-pill shadow-sm px-4 font-weight-bold"
            style="background: linear-gradient(45deg, #ff0844, #ffb199); border: none;">
             <i class="fas fa-plus mr-2"></i> Tambah Penyakit
         </a>
@@ -28,7 +28,7 @@
                     <i class="fas fa-tools fa-lg" style="color: #ff0844;"></i>
                 </div>
                 <div>
-                    <h5 class="mb-0 font-weight-bold text-white">Daftar Kerusakan Terdaftar</h5>
+                    <h5 class="mb-0 font-weight-bold text-dark">Daftar Kerusakan Terdaftar</h5>
                     <p class="mb-0 small opacity-90">Total {{ $diseases->count() }} penyakit tersedia</p>
                 </div>
             </div>

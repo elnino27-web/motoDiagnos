@@ -11,7 +11,7 @@
             <p class="text-muted small mb-0">Kelola indikator fisik dan masalah yang dialami pada motor.</p>
         </div>
         {{-- Tombol menggunakan gradien Kuning-Oranye --}}
-        <a href="{{ route('admin.symptoms.create') }}" class="btn text-white rounded-pill shadow-sm px-4 font-weight-bold"
+        <a href="{{ route('admin.symptoms.create') }}" class="btn text-dark rounded-pill shadow-sm px-4 font-weight-bold"
            style="background: linear-gradient(45deg, #f6d365, #fda085); border: none; color: #5a4604;">
             <i class="fas fa-plus mr-2"></i> Tambah Gejala
         </a>
