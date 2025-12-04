@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Diagnosa - MotoDiagnos</title>
-    
+
     {{-- Fonts & Icons --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -134,21 +134,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9">
-                
+
                 @forelse ($results as $result)
                     @php
                         $disease = $result['disease'];
                         $percentage = $result['percentage'];
-                        $isHighest = $loop->first; 
+                        $isHighest = $loop->first;
                     @endphp
-                    
+
                     <div class="card result-card mb-4 animate__animated animate__fadeInUp {{ $isHighest ? 'primary-result' : '' }}" style="animation-delay: {{ $loop->index * 0.1 }}s">
                         <div class="card-body p-4">
-                            
+
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <div>
                                     @if($isHighest)
-                                        <span class="badge bg-primary mb-2">KEMUNGKINAN UTAMA</span>
+                                        <span class="badge bg-info mb-2">KEMUNGKINAN UTAMA</span>
                                     @endif
                                     <h4 class="card-title fw-bold text-dark mb-1">{{ $disease->name }}</h4>
                                     <p class="text-muted small mb-0">
@@ -156,31 +156,31 @@
                                     </p>
                                 </div>
                                 <div class="text-end">
-                                    <h3 class="fw-bold text-primary mb-0">{{ $percentage }}%</h3>
+                                    <h3 class="fw-bold text-dark mb-0">{{ $percentage }}%</h3>
                                     <small class="text-muted">Akurasi</small>
                                 </div>
                             </div>
 
                             {{-- Progress Bar --}}
                             <div class="progress mb-4">
-                                <div class="progress-bar" role="progressbar" 
-                                     style="width:{{$percentage}}%;" 
-                                     aria-valuenow="{{$percentage}}" 
+                                <div class="progress-bar" role="progressbar"
+                                     style="width:{{$percentage}}%;"
+                                     aria-valuenow="{{$percentage}}"
                                      aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
-                            
+
                             {{-- Tombol Detail (Collapse) --}}
                             <button class="btn btn-detail w-100" type="button" data-bs-toggle="collapse" data-bs-target="#detail-{{ $disease->id }}">
                                 <i class="fas fa-info-circle me-2"></i> Lihat Detail & Solusi Perbaikan
                             </button>
-                            
+
                             {{-- Konten Detail --}}
                             <div class="collapse mt-3" id="detail-{{ $disease->id }}">
                                 <div class="p-3 bg-light rounded-3">
                                     <h6 class="fw-bold text-secondary mb-2"><i class="fas fa-search me-2"></i>Analisa:</h6>
                                     <p class="text-dark mb-3">{{ $disease->description }}</p>
-                                    
+
                                     <div class="solution-box">
                                         <h6 class="fw-bold text-success mb-2"><i class="fas fa-tools me-2"></i>Saran Perbaikan:</h6>
                                         <p class="mb-0">{{ $disease->solution }}</p>
@@ -201,14 +201,22 @@
                     </div>
                 @endforelse
 
+
                 {{-- Footer Action --}}
                 <div class="text-center mt-5 mb-5 animate__animated animate__fadeIn">
                     <a href="{{ route('diagnosis.form') }}" class="btn btn-restart">
                         <i class="fas fa-redo-alt me-2"></i> Ulangi Diagnosa
                     </a>
-                    <div class="mt-4 text-muted small">
-                        &copy; 2025 MotoDiagnos System
-                    </div>
+                </div>
+
+                {{-- Footer Link --}}
+                <div class="text-center mt-4">
+                    <a href="{{ route('welcome') }}" class="text-decoration-none text-muted fw-bold">
+                        <i class="fas fa-arrow-left me-1"></i> Kembali ke Beranda
+                    </a>
+                </div>
+                <div class="mt-4 text-center text-muted small">
+                    &copy; 2025 MotoDiagnos System
                 </div>
 
             </div>
