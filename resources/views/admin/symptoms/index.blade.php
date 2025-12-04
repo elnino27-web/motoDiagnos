@@ -60,7 +60,7 @@
                                 <td class="py-3">
                                     <div class="d-flex flex-column">
                                         <span class="badge px-2 py-1 mb-1 align-self-start text-white shadow-sm"
-                                              style="background: linear-gradient(45deg, #43e97b, #38f9d7);"> {{-- Gradien Tipe Motor (Hijau/Tosca) --}}
+                                              style="background: linear-gradient(45deg, #f6d365, #fda085);">
                                             <i class="fas fa-motorcycle"></i> {{ $symptom->motorType->name ?? 'Unknown' }}
                                         </span>
                                         <small class="text-muted pl-1">{{ $symptom->motorType->brand->name ?? '-' }}</small>
