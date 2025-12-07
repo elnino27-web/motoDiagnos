@@ -1,5 +1,5 @@
 <p align="center">
-<img src="images/motoDiagnos" width="200" alt="MotoDiagnos Logo">
+<img src="/public/images/motoDiagnos.png" width="200" alt="MotoDiagnos Logo">
 </p>
 
 <h1 align="center">🏍️ MotoDiagnos: Sistem Pakar Diagnosa Kerusakan Sepeda Motor</h1>
