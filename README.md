@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://www.google.com/search?q=https://oaidalleapiprodscus.blob.core.windows.net/private/org-vB0B2bUj4I8mK2n2u3617YjL/user-vN07Y8v12h1xV8d5z0w3I4s1/img-H3k5g2e0K9M5f2x4e8j3s0Q4.png%3Fattachment%3Dtrue%26n%3D2" width="200" alt="MotoDiagnos Logo">
+<img src="images/motoDiagnos" width="200" alt="MotoDiagnos Logo">
 </p>
 
 <h1 align="center">🏍️ MotoDiagnos: Sistem Pakar Diagnosa Kerusakan Sepeda Motor</h1>
@@ -74,7 +74,7 @@ Mengelola model spesifik (e.g., Beat 110cc).
 
 Gejala
 
-fa-search-plus
+fa-clipboard-list
 
 Mengelola indikator kerusakan (Kode G01, G02, dst.).
 
@@ -82,7 +82,7 @@ Mengelola indikator kerusakan (Kode G01, G02, dst.).
 
 Kerusakan
 
-fa-bug
+fa-tools
 
 Mengelola definisi Penyakit dan Solusi.
 
@@ -98,7 +98,7 @@ Menghubungkan Penyakit $\leftrightarrow$ Gejala (Logika IF-THEN).
 
 ⚙️ 🛠 Teknologi yang Digunakan
 
-Backend: Laravel / PHP 12+
+Backend: Laravel 12+ / PHP 8+
 
 Database: MySQL
 
