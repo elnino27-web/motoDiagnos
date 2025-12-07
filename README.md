@@ -1,5 +1,8 @@
 <p align="center">
-<img src="public/images/motoDiagnos.png" width="200" style="border-radius: 50%" alt="MotoDiagnos Logo">
+<img src="public/images/motoDiagnos.png" 
+     width="200" 
+     alt="MotoDiagnos Logo" 
+     style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 3px solid #f0f0f0;">
 </p>
 
 <h1 align="center">🏍️ MotoDiagnos: Sistem Pakar Diagnosa Kerusakan Motor Matic Berdasarkan Tipe dan Gejala</h1>
